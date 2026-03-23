@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: rec
+type: opaque
+stringData:
+  username: admin@redis.io
+  password: adminRL123
+---
+apiVersion: "app.redislabs.com/v1"
+kind: "RedisEnterpriseCluster"
+metadata:
+  name: rec
+spec:
+  username: "admin@redis.io"
+  persistentSpec:
+    enabled: true
+  rackAwarenessNodeLabel: dc
+#topology.kubernetes.io/zone
+  nodes: 3
