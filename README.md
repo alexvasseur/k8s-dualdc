@@ -14,6 +14,10 @@ This project includes:
 - a Docker-level script to simulate a harder `dc2` outage for Kind node containers
 
 
+We use a total of 6 worker so that we have enough worker nodes to deploy 3 pods (node) of Redis Enterprise and that DC have enough worker capacity free to trigger Redis Enterprise statefulset pod automatic recovery when appropriate.
+By default Redis Enterprise K8s scheduling will not put multiple pods on same workers nodes.
+
+
 ## TODO
 
 - Can't start Redis Enterprise with 
