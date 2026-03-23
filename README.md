@@ -1,4 +1,4 @@
-# kind multi-dc lab
+# Dual datacenter (stretched) Kubernetes with Redis Enterprise
 
 A small Kind-based lab to simulate a **2 data center + 1 witness/quorum** Kubernetes topology with Redis Enterprise.
 
@@ -12,6 +12,22 @@ This project includes:
   - three worker in `dc2`
 - a `kubectl`-based script to simulate a scheduler-level `dc2` failure
 - a Docker-level script to simulate a harder `dc2` outage for Kind node containers
+
+
+## TODO
+
+- Can't start Redis Enterprise with 
+```
+  rackAwarenessNodeLabel: topology.kubernetes.io/zone
+```
+but works with
+```
+  rackAwarenessNodeLabel: dc
+```
+
+- Quorum loss with DC2 when having one cluster (3+3) database and one ha (1+1) database.
+
+
 
 ## Prerequisites
 
