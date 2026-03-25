@@ -17,4 +17,6 @@ spec:
     enabled: true
   rackAwarenessNodeLabel: dc
 #topology.kubernetes.io/zone
-  nodes: 3
+  nodes: 1
+  nodeSelector:
+    dc: dcq
